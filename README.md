@@ -12,3 +12,6 @@ This is just a Proof-of-Concept (PoC) for an extra encryption layer over WhatsAp
 ## Video Demonstration
 Check out the below demonstration video.
 [TODO: Add dmeo video page]
+
+## Contact
+Feel free to contact me on Twitter: [AKhalil_90](https://twitter.com/AKhalil_90)
