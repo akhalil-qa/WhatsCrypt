@@ -1,4 +1,4 @@
-# WhatsCrypt - Encrypt Your WhatsApp Conversation!
+# WhatsCrypt - Encrypt Your WhatsApp Conversations!
 A script to provide an end-to-end encryption on top of WhatApp web-client.
 
 ## Purpose
