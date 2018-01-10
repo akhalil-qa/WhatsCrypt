@@ -14,4 +14,4 @@ Check out the below demonstration video.
 [TODO: Add dmeo video page]
 
 ## Contact
-Feel free to contact me on Twitter: [AKhalil_90](https://twitter.com/AKhalil_90)
+Feel free to contact me on Twitter: [@AKhalil_90](https://twitter.com/AKhalil_90)
