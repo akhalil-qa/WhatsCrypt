@@ -30,5 +30,10 @@ If you open the encrypted conversation from they moile version of WhatsApp, you'
 ## Credits
 - I have used the AES implementation wirrten by **[@Brix](https://github.com/brix): [crypto-js](https://github.com/brix/crypto-js)**
 
+## Disclaimer
+This is a Proof-of-Concept (PoC) script to show how a client can add an extra encryption layer on top messaging services platform to communicate securely. WhatsApp was used for this PoC due to its huge popularity among other instant messaging services.
+
+I'm not responsible for any malicious, unethical or illegal usage of this script. You'll be responsible for all implications raised by how you decided to use this script.
+
 ## Contact
 Feel free to contact me on Twitter: **[@AKhalil_90](https://twitter.com/AKhalil_90)**
