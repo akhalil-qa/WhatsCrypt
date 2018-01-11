@@ -11,6 +11,8 @@ The script is built to provide a user, who is using the WhatsApp web version, wi
 
 So, what both communicating parties will see in their web version of WhatsApp is the secret messages in palaintext, whereas, all other thrid parties who might try to sniff, hijack or intercept your messages will only see the encrypted messages, unless they have an access to the shared secret key. Even the service provider (e.g. WhatsApp themselves!) will not have an access to your messages.
 
+The used encryption in this script is based on AES (Advanced Encryption Standard) where a single key is used to perform both data encryption and decryption.
+
 ## Installation
 1. Open **Chrome Browser** and go to **[https://web.whatsapp.com/](https://web.whatsapp.com/)**.
 2. From the tool bar, select **View** > **Developer** > **JavaScript Console**.
