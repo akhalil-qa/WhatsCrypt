@@ -13,5 +13,8 @@ This is just a Proof-of-Concept (PoC) for an extra encryption layer over WhatsAp
 Check out the below demonstration video.
 [TODO: Add dmeo video page]
 
+## Credits
+- I have used the AES implementation wirrten by [Brix](https://github.com/brix): [crypto-js](https://github.com/brix/crypto-js)
+
 ## Contact
 Feel free to contact me on Twitter: [@AKhalil_90](https://twitter.com/AKhalil_90)
