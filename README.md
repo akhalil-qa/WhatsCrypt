@@ -1,5 +1,5 @@
 # WhatsCrypt - Extra Encryption Layer To Your WhatsApp Conversations!
-A script that provides an extra layer of client-end encryption on top of WhatsApp end-to-end encryption.
+A script that provides an extra layer of client-end encryption on top of WhatsApp's claimed end-to-end encryption.
 
 ## Purpose
 I've built a **JavaScript** script that allow a **Web WhatsApp** user to encrypt his conversation with another party using a crypographic shared encryption ke between both parties.
