@@ -1,6 +1,6 @@
 /* called every 1 second to decrypt encrypted text in the chat */
 setInterval(function(){
-  /* get chat buttons  */
+  /* get chat buttons */
   var chatButtons = document.getElementsByClassName("_3Kxus")[1];
 
   /* get more buton of the chat buttons */
@@ -8,6 +8,33 @@ setInterval(function(){
 
   /* once more chat button is clicked, call moreChatButtonClicked function */
   moreChatButton.onclick = moreChatButtonClicked;
+
+  /* once inputBox recevies Enter key, call sendEncryptedMessage function */
+  var inputBox = document.getElementsByClassName("pluggable-input-body copyable-text selectable-text")[0];
+  inputBox.onkeydown = function(e) {
+    if(e.keyCode == 13) {
+      e.stopPropagation();
+      sendEncryptedMessage();
+    }
+  };
+  inputBox.onkeyup = function(e) {
+    if(e.keyCode == 13){
+      inputBox.innerText = "";
+      inputBox.innerHTML = "";
+    }
+  }
+
+  /* once send button is clicked, call sendEncryptedMessage function */
+  var sendButton = document.getElementsByClassName("compose-btn-send")[0];
+  if (sendButton) {
+    sendButton.onclick = function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      sendEncryptedMessage();
+      inputBox.innerText = "";
+      inputBox.innerHTML = "";
+    };
+  }
 
   /* get active chat */
   var chat = getReactComponent(document.getElementsByClassName('chatlist-panel-body')[0]);
@@ -54,6 +81,7 @@ setInterval(function(){
       }
     }
   }
+
 }, 1000);
 
 /* called once more chat button is clicked */
@@ -108,6 +136,30 @@ function encryptClicked(e){
     localStorage.removeItem("WhatsCrypt_" + recipientUserId);
   }
 };
+
+function sendEncryptedMessage(e){
+  /* get active chat */
+  var chat = getReactComponent(document.getElementsByClassName('chatlist-panel-body')[0]);
+
+  /* get recipient user id */
+  var recipientUserId = chat.chatlist.getActiveChat().id;
+
+  /* encrypt input text */
+  var inputBox = document.getElementsByClassName("pluggable-input-body copyable-text selectable-text")[0];
+
+  /* get shared key */
+  var sharedKey = localStorage.getItem("WhatsCrypt_" + recipientUserId);
+
+  /* if shared key is found, encrypt and send. If not, send plaintext */
+  var textToSend = "";
+  if (sharedKey)
+    textToSend = encrypt(localStorage.getItem("WhatsCrypt_" + recipientUserId), inputBox.innerText);
+  else
+    textToSend = inputBox.innerText;
+
+  /* send the text  */
+  chat.chatlist.getActiveChat().sendMessage(textToSend);
+}
 
 /* get React component */
 function getReactComponent(dom) {
