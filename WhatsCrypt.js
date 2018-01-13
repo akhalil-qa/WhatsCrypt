@@ -113,7 +113,7 @@ function encryptClicked(e){
   e.stopPropagation();
 
   /* get active chat recipient user id */
-  var chat = getActiveChat();
+  var recipientUserId = getActiveChat();
 
   /* get shared key with this recipient */
   var sharedKey = localStorage.getItem("WhatsCrypt_" + recipientUserId);
