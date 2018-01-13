@@ -36,11 +36,8 @@ setInterval(function(){
     };
   }
 
-  /* get active chat */
-  var chat = getReactComponent(document.getElementsByClassName('chatlist-panel-body')[0]);
-
-  /* get recipient user id */
-  var recipientUserId = chat.chatlist.getActiveChat().id;
+  /* get recipient user id of active chat  */
+  var recipientUserId = Store.Chat.active();
 
   /* if shared key is stored */
   if (localStorage.getItem("WhatsCrypt_" + recipientUserId)) {
@@ -116,8 +113,7 @@ function encryptClicked(e){
   e.stopPropagation();
 
   /* get active chat recipient user id */
-  var chat = getReactComponent(document.getElementsByClassName('chatlist-panel-body')[0]);
-  var recipientUserId = chat.chatlist.getActiveChat().id;
+  var chat = getActiveChat();
 
   /* get shared key with this recipient */
   var sharedKey = localStorage.getItem("WhatsCrypt_" + recipientUserId);
@@ -138,11 +134,8 @@ function encryptClicked(e){
 };
 
 function sendEncryptedMessage(e){
-  /* get active chat */
-  var chat = getReactComponent(document.getElementsByClassName('chatlist-panel-body')[0]);
-
-  /* get recipient user id */
-  var recipientUserId = chat.chatlist.getActiveChat().id;
+  /* get recipient user id of active chat */
+  var recipientUserId = Store.Chat.active();
 
   /* encrypt input text */
   var inputBox = document.getElementsByClassName("pluggable-input-body copyable-text selectable-text")[0];
@@ -158,20 +151,17 @@ function sendEncryptedMessage(e){
     textToSend = inputBox.innerText;
 
   /* send the text  */
-  chat.chatlist.getActiveChat().sendMessage(textToSend);
+  getActiveChat().sendMessage(textToSend);
 }
 
-/* get React component */
-function getReactComponent(dom) {
-    for (var key in dom)
-        if (key.startsWith("__reactInternalInstance$")) {
-            var compInternals = dom[key]._currentElement;
-            var compWrapper = compInternals._owner;
-            var comp = compWrapper._instance;
-            return comp;
-        }
-    return null;
-};
+/* get active chat */
+function getActiveChat() {
+  activeChatUserId = Store.Chat.active();
+
+  for (var i = 0; i < Store.Chat.models.length; i++)
+    if (Store.Chat.models[i].id == activeChatUserId)
+      return Store.Chat.models[i];
+}
 
 /* encrypt plaintext */
 function encrypt(key, plaintext) {
