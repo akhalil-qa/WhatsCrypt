@@ -21,8 +21,7 @@ The used encryption in this script is based on AES (Advanced Encryption Standard
 5. Enjoy secret conversations! :lock:
 
 ## Demonstration Video
-Check out the below demonstration video.
-[TODO: Add dmeo video page]
+Check out the demonstration video: [Demo Video](https://streamable.com/z60yt)
 
 ## Limitation
 This will only work on the **web version** of WhatsApp and will **NOT** work on the mobile version. This is because, up to my current knowledge, there is no easy way to inject foreign code into mobile apps codes. If you have a way to achieve that, please share it with us here!
