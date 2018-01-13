@@ -20,7 +20,7 @@ The used encryption in this script is based on AES (Advanced Encryption Standard
 4. Watch the demo video below to to see how to set encryption keys for your conversations.
 5. Enjoy secret conversations! :lock:
 
-## Video Demonstration
+## Demonstration Video
 Check out the below demonstration video.
 [TODO: Add dmeo video page]
 
